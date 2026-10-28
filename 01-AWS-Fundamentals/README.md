@@ -39,42 +39,42 @@ By the end of this module, you will be able to:
 ### 1.1 Regions
 
 **What is a Region?**
-- A geographical area containing multiple Availability Zones
-- Completely independent and isolated from other regions
+- A geographical area containing multiple Availability Zones (Một khu vực địa lý bao gồm nhiều Vùng sẵn sàng (Availability Zones))
+- Completely independent and isolated from other regions (Hoàn toàn độc lập và tách biệt khỏi các khu vực khác)
 - Currently 30+ regions globally
 
 **Key Characteristics:**
 - Each region has a unique code (e.g., `us-east-1`, `eu-west-1`)
-- Data doesn't leave a region unless you explicitly configure it
+- Data doesn't leave a region unless you explicitly configure it (Dữ liệu không rời khỏi một khu vực trừ khi bạn định cấu hình cụ thể cho việc đó.)
 - Pricing varies by region
 - Not all services are available in all regions
 
 **How to Choose a Region:**
 ```
-Consider these factors:
-1. Compliance - Data sovereignty requirements
-2. Proximity - Latency to end users
+Consider these factors: (Hãy cân nhắc các yếu tố sau:)
+1. Compliance - Data sovereignty requirements (Tuân thủ - Các yêu cầu về chủ quyền dữ liệu)
+2. Proximity - Latency to end users (Khoảng cách gần - Độ trễ đối với người dùng cuối)
 3. Available Services - Not all services in all regions
 4. Pricing - Costs vary by region
 ```
 
-**Exam Tip**: 🎯 Choose the region closest to your users to minimize latency.
+**Exam Tip**: 🎯 Choose the region closest to your users to minimize latency. (Hãy chọn khu vực gần người dùng của bạn nhất để giảm thiểu độ trễ.)
 
 ### 1.2 Availability Zones (AZs)
 
 **What is an Availability Zone?**
-- One or more discrete data centers within a region
-- Each AZ has independent power, cooling, and networking
-- Connected to other AZs via low-latency links
+- One or more discrete data centers within a region (Một hoặc nhiều trung tâm dữ liệu riêng biệt nằm trong một khu vực)
+- Each AZ has independent power, cooling, and networking (Mỗi AZ đều có hệ thống điện, làm mát và mạng lưới độc lập)
+- Connected to other AZs via low-latency links (Được kết nối với các AZ khác thông qua các đường truyền có độ trễ thấp)
 - Each region has minimum 3 AZs (most have 3-6)
 
 **Key Characteristics:**
 - AZs are named: `us-east-1a`, `us-east-1b`, `us-east-1c`, etc.
-- Isolated from failures in other AZs
-- Enables high availability and fault tolerance
-- ~100 total AZs globally
+- Isolated from failures in other AZs (Được cô lập khỏi các sự cố ở những AZ khác)
+- Enables high availability and fault tolerance (Cho phép tính sẵn sàng cao (high availability) và khả năng chịu lỗi (fault tolerance))
+- ~100 total AZs globally (Tổng cộng khoảng ~100 AZ trên toàn cầu)
 
-**Multi-AZ Deployment Pattern:**
+**Multi-AZ Deployment Pattern:** (Mô hình triển khai Multi-AZ)
 ```
 Region: us-east-1
 ├── AZ: us-east-1a
@@ -87,11 +87,11 @@ Region: us-east-1
     └── Application Server 3
 ```
 
-**Exam Tip**: 🎯 Always deploy across multiple AZs for high availability.
+**Exam Tip**: 🎯 Always deploy across multiple AZs for high availability. (Luôn triển khai trên nhiều AZ để đạt tính sẵn sàng cao.)
 
 ### 1.3 Edge Locations
 
-**What is an Edge Location?**
+**What is an Edge Location?** (Edge Location (Vị trí biên) là gì?)
 - Endpoints for AWS services like CloudFront and Route 53
 - Used to cache content closer to end users
 - 400+ edge locations globally (more than Regions)
@@ -108,9 +108,9 @@ Region: us-east-1
 ### 1.4 Local Zones
 
 **What is a Local Zone?**
-- Extension of an AWS region closer to large population centers
-- Provides single-digit millisecond latency to end users
-- Useful for latency-sensitive applications
+- Extension of an AWS region closer to large population centers (Phần mở rộng của một AWS Region đến gần hơn với các trung tâm đông dân cư lớn)
+- Provides single-digit millisecond latency to end users (Cung cấp độ trễ ở mức mili-giây một chữ số (< 10ms) cho người dùng cuối)
+- Useful for latency-sensitive applications (Hữu ích cho các ứng dụng nhạy cảm với độ trễ)
 
 **Example:** Los Angeles Local Zone extends `us-west-2` region
 
